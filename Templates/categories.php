@@ -20,7 +20,17 @@ include_once('defaults/head.php');
         </ol>
     </nav>
 
-
+    <?php foreach ($categories as $category): ?>
+    <div class="col-sm-4 col-sm-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <a href="/categories/<?= $category ->id ?>">
+                    <img src="" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    ?>
 
     <hr>
     <?php
