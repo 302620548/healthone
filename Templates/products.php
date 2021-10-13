@@ -11,6 +11,8 @@ include_once('defaults/head.php');
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
+    global $products;
+    var_dump($products);
     ?>
 
     <nav aria-label="breadcrumb">
@@ -23,16 +25,16 @@ include_once('defaults/head.php');
 </div>
 <div class="row gy-3 ">
 
-    <?php global $categories ?>
-    <?php foreach ($categories as $category):?>
+    <?php global $products, $name ?>
+    <?php foreach ($products as $product):?>
         <div class="col-sm-4 col-md-3">
             <div class="card">
                 <div class="card-body text-center">
-                    <a href="/categories/<?= $category->id ?>">
-                        <img class="product-img img-responsive center-block" src='/img/categories/<?= $category->picture ?>'/>
+                    <a href="/categories/<?= $product->category_id ?>/product/><?= $product->id ?>">
+                        <img class="product-img img-responsive center-block" src='/img/categories/<?= $name?>/<?= $product->picture ?>'/>
 
                     </a>
-                    <div class="card-title mb-3"><?= $category->name ?>
+                    <div class="card-title mb-3"><?= $product->name ?>
                     </div>
                 </div>
             </div>

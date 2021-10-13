@@ -11,7 +11,7 @@ $titleSuffix = "";
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
-        
+
         if (isset($_GET['category_id'])) {
             $categoryId = $_GET['category_id'];
             $products = getProducts($categoryId);
@@ -28,6 +28,7 @@ switch ($params[1]) {
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
+                include_once "../Templates/products.php";
             }
         } else {
             // TODO Toon de categorieen
