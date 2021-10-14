@@ -25,8 +25,8 @@ switch ($params[1]) {
                     saveReview($_POST['name'],$_POST['review']);
                     $reviews=getReviews($productId);
                 }
-                // TODO Zorg dat je hier de product pagina laat zien
                 include_once "../Templates/product.php";
+                // TODO Zorg dat je hier de product pagina laat zien
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 include_once "../Templates/products.php";
