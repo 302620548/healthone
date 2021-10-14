@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 okt 2021 om 14:43
+-- Gegenereerd op: 14 okt 2021 om 11:53
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -38,7 +38,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
-(1, 'crosstrainer', 'crosstrainer.jpg');
+(1, 'crosstrainer', '/categories/crosstrainer.jpg'),
+(2, 'hometrainer', '/categories/hometrainer.jpg'),
+(3, 'loopband', '/categories/loopband.jpg'),
+(4, 'roeitrainer', '/categories/roeitrainer.jpg');
 
 -- --------------------------------------------------------
 
@@ -59,7 +62,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
-(1, 'Recross', 'cr1.jpg', 'Best reviewed crosstrainer 1980', 1);
+(1, 'Recross', '/categories/crosstrainer/cr1.jpg', 'Best reviewed crosstrainer 1980', 1),
+(2, 'Crosstrainer2', '/categories/crosstrainer/cr2.jpg', 'Best reviewed crosstrainer 1980', 1),
+(3, 'Crosstrainer3', '/categories/crosstrainer/cr3.jpg', 'Yep', 1),
+(4, 'crosstrainer 4', '/categories/crosstrainer/cr4.jpg', 'Allo', 1),
+(5, 'Crosstrainer 5', '/categories/crosstrainer/cr5.jpg', 'Yeah it\'s the 5th crosstrainer', 1),
+(6, 'crosstrainer 6', '/categories/crosstrainer/cr6.jpg', 'Yeah guys, look! It\'s the 6th crosstrainer, who would have guessed it\'s a crosstrainer?', 1);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -85,13 +93,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
