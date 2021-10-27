@@ -5,13 +5,11 @@ include_once('defaults/head.php');
 ?>
 
 <body>
-
+<?php
+include_once ('defaults/New header.php');
+?>
 <div class="container">
-    <?php
-    include_once('defaults/header.php');
-    include_once('defaults/menu.php');
-    include_once('defaults/pictures.php');
-    ?>
+
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

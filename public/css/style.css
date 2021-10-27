@@ -1,28 +1,76 @@
 body {
-    background-color: gainsboro;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #222222;
+    color: white;
 }
 
-.container {
-    background-color: white;
+.jumbotron{
+    background-image: url(/img/healthone-wide.png);
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover, auto 100%;
+    margin-bottom:0;
+    border-radius: 0px;
+    border-bottom: 5px solid rgb(217, 25, 25);
+    height: 35vh;
 }
 
-.pull-right img-thumbnail {
-    margin-top: -10px;
-    margin-bottom: 10px
+.jumbrotron>li, a, button {
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: 0 0 3px #d91919, 0 0 5px #000000;
+    text-decoration: none;
+
 }
 
-.header-row {
-    margin-top: 20px
+.inlog {
+    padding: 10px 25px;
+    background-color: rgb(217, 25, 25);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
-.banner-img {
-    margin-bottom: 20px
+.logo {
+    cursor: pointer;
 }
 
-.navbar {
-    margin-bottom: 0;
+.NavLinks li{
+    display: inline-block;
+    padding: 20px 10px;
+
 }
 
-.product-img {
-    width: 70%;
+.NavLinks li a:hover {
+    color: rgb(255, 99, 99);
+}
+
+.card {
+    background-color: #222222;
+    border-radius: 1px;
+    border-color: white;
+}
+
+.time-graph {
+    border-radius: 1px;
+    border-color: white;
+
+}
+
+table {
+    wdith: 100px;
+    border-collapse: collapse;
+    border: 1px solid #ffffff;
+    background-color: lightgray;
+}
+td {
+    border: 1px solid #ffffff;
+    width: 100px;
+}
+iframe {
+
+}
+h2 {
+    margin-top: 50px;
 }
