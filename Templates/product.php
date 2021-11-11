@@ -26,18 +26,21 @@ include_once ('defaults/New header.php');
     </nav>
 
 </div>
-
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <img class="img-fluid center-block" width="200px" src='/img/<?= $product->picture ?>'/>
-            <div class="card-body">
-                <h5 class="card-title"><?= $product->name ?></h5>
-                <p class="card-text"><?= $product->description ?></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <img class="img-fluid center-block" width="200px" src='/img/<?= $product->picture ?>'/>
+                <div class="card-body">
+                    <h5 class="card-title"><?= $product->name ?></h5>
+                    <p class="card-text"><?= $product->description ?></p>
+                    <a href="/review/<?=$product->id?>">review</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <hr>
 <?php

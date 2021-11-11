@@ -35,8 +35,8 @@ switch ($params[1]) {
             $product = getProduct($productId);
             $name = getCategoryName($product->category_id);
             $titleSuffix = '|' . $product->name;
-            $reviews = getReviews($productId);
-            include_once "../Templates/home.php";
+            //$reviews = getReviews($productId);
+            include_once "../Templates/product.php";
         }
         else {
             $titleSuffix = '| Home';
@@ -44,14 +44,23 @@ switch ($params[1]) {
         }
         break;
 
+    case 'review':
+        $id=$_GET['id'];
+        $product=getProduct($id);
+        include_once "../Templates/review.php";
+        break;
+
+    case 'contact':
+        include_once "../Templates/contact.php";
+        break;
+
     default:
-            $titleSuffix = ' | Home';
-            include_once "../Templates/home.php";
-            break;
+        $titleSuffix = ' | Home';
+        include_once "../Templates/home.php";
+        break;
+}
 
-    }
-
-    function getTitle() {
-        global $title, $titleSuffix;
-        return $title . $titleSuffix;
-    }
+function getTitle() {
+    global $title, $titleSuffix;
+    return $title . $titleSuffix;
+}
