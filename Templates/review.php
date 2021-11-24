@@ -58,12 +58,12 @@ include_once ('defaults/New header.php');
             </div>
             <div class="mb-3">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Waardering:</label>
-                <select class="custom-seleect mr-sm-2" name="stars" id="inlineFormCustomSelect">
-                    <option selected value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <select class="custom-select mr-sm-2" name="stars" id="inlineFormCustomSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option selected value="5">5</option>
                 </select>
             </div>
             <div class="modal-footer">
