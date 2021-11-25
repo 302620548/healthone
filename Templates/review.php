@@ -19,8 +19,6 @@ include_once ('defaults/New header.php');
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">sportcenter</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/categories/<?= $product->category_id ?>"><?= $name ?></a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?= $product->name?></li>
 
         </ol>
     </nav>
@@ -54,7 +52,7 @@ include_once ('defaults/New header.php');
                 <label for="name" class="col-form-label">
                     Review:
                 </label>
-                <input type="text" name="name" class="form-control" id="name">
+                <input type="text" name="description" class="form-control" id="name">
             </div>
             <div class="mb-3">
                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Waardering:</label>
@@ -63,12 +61,11 @@ include_once ('defaults/New header.php');
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                <option selected value="5">5</option>
+                <option value="5">5</option>
                 </select>
             </div>
             <div class="modal-footer">
-                <button type="submit" name="close" class="btn btn-secondary">Close</button>
-                <button type="submit" class="btn btn-secondary">Save Change</button>
+                <button type="submit" name="verzenden" class="btn btn-secondary">Save Change</button>
             </div>
         </form>
     </div>
@@ -87,5 +84,4 @@ include_once('defaults/footer.php');
 ?>
 
 </body>
-</html>
 </html>

@@ -41,6 +41,24 @@ include_once ('defaults/New header.php');
     </div>
 </div>
 
+<?php
+try {
+    $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
+    $query = $db->prepare('SELECT * FROM review where product_id =' . $product->id);
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($result as $data) {
+        echo $data ["name"] . " <br>  ";
+        echo $data ["description"] . " <br> ";
+        echo $data ["stars"] . " <br> ";
+        echo $data ["date"] . " <br> <br> ";
+    }
+    echo "</table>";
+} catch(PDOException $e) {
+    die("Error!: " . $e->getMessage());
+}
+?>
+
 
 <hr>
 <?php

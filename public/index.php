@@ -1,4 +1,5 @@
 <?php
+require '../Modules/Reviews.php';
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
@@ -44,14 +45,28 @@ switch ($params[1]) {
         }
         break;
 
-    case 'review':
-        $id=$_GET['id'];
-        $product=getProduct($id);
-        include_once "../Templates/review.php";
-        break;
-
     case 'contact':
         include_once "../Templates/contact.php";
+        break;
+
+    case 'review':
+        if(isset($_GET['id'])) {
+            $productId=$_GET['id'];
+            $product = getProduct($productId);
+            if(isset($_POST['verzenden'])) {
+                //var_dump($_POST);
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $stars = $_POST['stars'];
+                saveReview($name,$description,$stars,$productId);
+                $reviews=getReviews();
+                include_once "../Templates/product.php";
+            } else {
+                include_once "../Templates/review.php";
+            }
+        } else {
+            include_once "../Templates/home.php";
+        }
         break;
 
     default:
