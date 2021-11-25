@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 28 okt 2021 om 11:29
+-- Gegenereerd op: 25 nov 2021 om 12:39
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -103,11 +103,30 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 CREATE TABLE `review` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
   `description` text NOT NULL,
   `stars` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `review`
+--
+
+INSERT INTO `review` (`id`, `user_id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
+(6, 1, 'dwqdw', '0000-00-00', 'dwqwq', 3, 1),
+(7, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(8, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(9, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(10, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(11, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(12, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(13, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(14, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(15, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(16, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
+(17, 1, 'Hallo', '2021-11-25', 'Super tof!', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -123,6 +142,13 @@ CREATE TABLE `user` (
   `last_name` varchar(255) NOT NULL,
   `Role` enum('member','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `Role`) VALUES
+(1, 'test@hotmail.com', 'test', 'test', 'test', 'member');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -190,13 +216,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT voor een tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
