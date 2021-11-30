@@ -14,6 +14,8 @@ body {
     border-radius: 0px;
     border-bottom: 5px solid rgb(217, 25, 25);
     height: 35vh;
+
+    padding: 20px 10px;
 }
 
 .jumbrotron>li, a, button {
@@ -38,7 +40,7 @@ body {
 
 .NavLinks li{
     display: inline-block;
-    padding: 20px 10px;
+    padding: 0px 10px;
 
 }
 
@@ -62,7 +64,6 @@ table {
     wdith: 100px;
     border-collapse: collapse;
     border: 1px solid #ffffff;
-    background-color: lightgray;
 }
 td {
     border: 1px solid #ffffff;

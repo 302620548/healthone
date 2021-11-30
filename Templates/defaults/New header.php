@@ -1,5 +1,5 @@
 <div class="jumbotron text-center">
-    <div class="container">
+    <div class="container header-container">
         <div class="row header-text">
             <div class="col-sm-3">
                 <a href="/home">
