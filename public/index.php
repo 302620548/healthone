@@ -1,8 +1,13 @@
 <?php
-require '../Modules/Reviews.php';
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Database.php';
+require '../Modules/Reviews.php';
+require '../Modules/Login.php';
+//require '../Modules/Logout.php';
+//require '../Modules/Common.php';
+
+session_start();
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -69,6 +74,33 @@ switch ($params[1]) {
         }
         break;
 
+    case 'login':
+        $titleSuffix = '| Login';
+        if(isset($_POST['login'])) {
+            $result = checkLogin();
+
+            switch ($result) {
+                case 'ADMIN' :
+                    header("Location: /admin/home");
+                    //include_once "../Templates/login.php";
+                    break;
+                case 'MEMBER' :
+                    break;
+                case 'FAILURE':
+                    $message = "Email of password niet correct ingevuld!";
+                case 'INCOMPLETE':
+                    $message = "formulier niet volledig ingevuld!";
+                    include_once "../Templates/login.php";
+                    break;
+            }
+        }else {
+
+            include_once "../Templates/login.php";
+        }
+        break;
+    case 'ADMIN':
+        include_once ('admin.php');
+        break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";

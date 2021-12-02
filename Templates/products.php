@@ -22,24 +22,25 @@ include_once ('defaults/New header.php');
     </nav>
 
 </div>
-<div class="row gy-3 ">
+    <div class="row gy-3 ">
 
-    <?php global $products, $name ?>
-    <?php foreach ($products as $product):?>
-        <div class="col-sm-6 col-md-2">
-            <div class="card">
-                <div class="card-body text-center">
-                    <a href="/product/<?= $product->id ?>">
-                        <img class="product-img img-responsive center-block" src='/img/<?= $product->picture ?>'/>
+        <?php global $products, $name ?>
+        <?php foreach ($products as $product):?>
+            <div class="col-sm-6 col-md-2">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <a href="/product/<?= $product->id ?>">
+                            <img class="product-img img-responsive center-block" src='/img/<?= $product->picture ?>'/>
 
-                    </a>
-                    <div class="card-title mb-3"><?= $product->name ?>
+                        </a>
+                        <div class="card-title mb-3"><?= $product->name ?>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    <?php endforeach;?>
+            </div>
+        <?php endforeach;?>
+
     <hr>
     <?php
     include_once('defaults/footer.php');
