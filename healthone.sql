@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 dec 2021 om 12:55
+-- Gegenereerd op: 02 dec 2021 om 14:24
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -118,28 +118,6 @@ CREATE TABLE `review` (
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `review`
---
-
-INSERT INTO `review` (`id`, `user_id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
-(6, 1, 'dwqdw', '0000-00-00', 'dwqwq', 3, 1),
-(7, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(8, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(9, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(10, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(11, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(12, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(13, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(14, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(15, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(16, 1, 'Hallo', '0000-00-00', 'Super tof!', 4, 1),
-(17, 1, 'Hallo', '2021-11-25', 'Super tof!', 4, 1),
-(18, 1, 'Botveon', '2021-12-01', 'Werkt super!', 5, 1),
-(19, 1, 'Botveon', '2021-12-01', 'Werkt super!', 5, 1),
-(20, 1, 'Jeff', '2021-12-01', 'Werkt mega goed!', 5, 7),
-(21, 1, 'Super! ', '2021-12-02', 'Super star', 5, 8);
-
 -- --------------------------------------------------------
 
 --
@@ -160,7 +138,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
-(1, 'test@hotmail.com', 'test', 'test', 'test', 'member');
+(1, 'test@hotmail.com', 'test', 'test', 'test', 'admin');
 
 --
 -- Indexen voor geëxporteerde tabellen

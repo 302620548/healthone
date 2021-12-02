@@ -11,9 +11,6 @@ include_once ('defaults/New header.php');
 ?>
 
 <div class="container">
-    <?php
-    global $product;
-    ?>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">

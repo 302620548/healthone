@@ -6,7 +6,6 @@ require '../Modules/Reviews.php';
 require '../Modules/Login.php';
 //require '../Modules/Logout.php';
 //require '../Modules/Common.php';
-
 session_start();
 
 $request = $_SERVER['REQUEST_URI'];
@@ -88,6 +87,8 @@ switch ($params[1]) {
                     break;
                 case 'FAILURE':
                     $message = "Email of password niet correct ingevuld!";
+                    include_once "../Templates/login.php";
+                    break;
                 case 'INCOMPLETE':
                     $message = "formulier niet volledig ingevuld!";
                     include_once "../Templates/login.php";
@@ -98,7 +99,7 @@ switch ($params[1]) {
             include_once "../Templates/login.php";
         }
         break;
-    case 'ADMIN':
+    case 'admin':
         include_once ('admin.php');
         break;
     default:
