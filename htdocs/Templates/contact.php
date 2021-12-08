@@ -4,6 +4,7 @@
 </head>
 <?php
 include_once('defaults/head.php');
+include_once('../Modules/Contacts.php');
 ?>
 
 <body>
@@ -23,21 +24,15 @@ include_once ('defaults/New header.php');
     <h1>Openingstijden</h1>
     <div class="time-graph">
     <?php
-    try {
-        $db = new PDO("mysql:host=localhost;dbname=healthone","root", "");
-        $query = $db->prepare ("SELECT * FROM opening_hours");
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    global $contacts;
+
         echo "<table>";
-        foreach ($result as &$data) {
-            echo "<td>" . $data ["day"] . " ";
-            echo "<td>" . $data ["time"] . "<br>";
+        foreach ($contacts as $contact) {
+            echo "<td>" . $contact->day . " ";
+            echo "<td>" . $contact->time . "<br>";
             echo "</tr>";
         }
         echo "</table>";
-    } catch(PDOException $e) {
-        die("Error!: " . $e->getMessage());
-    }
     ?>
     </div>
     <h2>Contact</h2>

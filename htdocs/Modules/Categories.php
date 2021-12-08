@@ -3,8 +3,7 @@
 function getCategories()
 {
     global $pdo;
-    $categories =$pdo->query('Select * FROM category')->fetchAll( PDO::FETCH_CLASS,'Category');
-    return $categories;
+    return $categories =$pdo->query('Select * FROM category')->fetchAll( PDO::FETCH_CLASS,'Category');
 }
 
 function getCategoryName(int $id)

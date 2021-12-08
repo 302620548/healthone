@@ -12,6 +12,7 @@ class Review
 
     public function __construct(){
         settype($this->id,'integer');
+        settype($this->product_id,'integer');
     }
 
 

@@ -11,15 +11,13 @@
             </div>
             <div class="col-sm-6">
                 <ul class="NavLinks">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/categories">Sportapparaat</a></li>
-                    <li><a href="#">Registreren</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/admin/home">Home</a></li>
+                    <li><a href="/admin/beheer">Beheer</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
 
-                <a class="nav-link" href="/login"><button class="inlog">Inloggen</button></a>
+                <a class="nav-link" href="/logout"><button class="inlog">uitloggen</button></a>
             </div>
         </div>
     </div>
