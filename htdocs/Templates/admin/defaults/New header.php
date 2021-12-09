@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <ul class="NavLinks">
                     <li><a href="/admin/home">Home</a></li>
-                    <li><a href="/admin/beheer">Beheer</a></li>
+                    <li><a href="/admin/products">Beheer</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
