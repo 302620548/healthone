@@ -4,7 +4,7 @@
             <div class="col-sm-3">
                 <a href="/home">
                     <div class="header-row row lead" >
-                        <h1 class="display-2">Health<span class="text-danger">One</span></h1>
+                        <h1 class="display-2">Health<span class="text-primary">One</span></h1>
 
                     </div>
                 </a>

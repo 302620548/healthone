@@ -32,6 +32,7 @@ include_once('defaults/head.php');
 <?php
 include_once ('defaults/New header.php');
 global $pdo;
+global $products;
 ?>
 <div class="container">
 
@@ -46,7 +47,7 @@ global $pdo;
             <table class="table">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col1">#</th>
                     <th scope="col">Afbeelding</th>
                     <th scope="col">Naam</th>
                     <th scope="col">Category</th>
@@ -55,15 +56,26 @@ global $pdo;
                 </tr>
                 </thead>
                 <tbody id="mytable">
-                <tr>
-.                    <td>Hello!</td>
-                    <td scrope="col">Het werkt! denk ik....</td>
-                    <td scrope="col">Het werkt! denk ik....</td>
-                    <td scrope="col">Het werkt! denk ik....</td>
-                    <td scrope="col">Het werkt! denk ik....</td>
-                    <td scrope="col">Het werkt! denk ik....</td>
 
+
+
+                <?php
+                $number = 1;
+                foreach ($products as $product) {
+                    ?>
+                <tr>
+                    <td><?=$number?></td>
+                    <td scrope="col">"Foto"</td>
+                    <td scrope="col"><?=$product->name?></td>
+                    <td scrope="col"><?=getCategoryName($product->category_id)?></td>
+                    <td scrope="col"></td>
+                    <td scrope="col"><a class="btn btn-danger btn-sm px-3" href="/admin/deleteProduct<?=$product->id?>">delete</a></td>
                 </tr>
+                    <?php
+                $number++;
+                }
+                ?>
+
                 </tbody>
             </table>
         </div>

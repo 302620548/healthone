@@ -6,13 +6,13 @@ body {
 }
 
 .jumbotron{
-    background-image: url(/img/healthone-wide.png);
+    background-image: url(/img/man-fitness-flat-design-barbell-moon-28693.jpeg);
     background-position: center;
     background-repeat:no-repeat;
     background-size: cover, auto 100%;
     margin-bottom:0;
     border-radius: 0px;
-    border-bottom: 5px solid rgb(217, 25, 25);
+    border-bottom: 5px solid rgb(49, 207, 255);
     height: 35vh;
 
     padding: 20px 10px;
@@ -21,14 +21,14 @@ body {
 .jumbrotron>li, a, button {
     color: #ffffff;
     font-size: 30px;
-    text-shadow: 0 0 3px #d91919, 0 0 5px #000000;
+    text-shadow: 0 0 5px #000000;
     text-decoration: none;
 
 }
 
 .inlog {
     padding: 10px 25px;
-    background-color: rgb(217, 25, 25);
+    background-color: rgb(49, 207, 255);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -45,7 +45,7 @@ body {
 }
 
 .NavLinks li a:hover {
-    color: rgb(255, 99, 99);
+    color: rgb(49, 207, 255);
 }
 
 .card {
