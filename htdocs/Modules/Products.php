@@ -28,7 +28,7 @@ function getAllProducts() :array {
 function deleteProduct(int $productID){
     global $pdo;
     $id = filter_var($productID, FILTER_VALIDATE_INT);
-    if(!$id=false){
+    if($id!==false){
         $stmnt = $pdo->prepare('DELETE FROM product WHERE  `id`=:id');
         $stmnt->bindParam(':id',$id);
         $stmnt->execute();

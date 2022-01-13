@@ -69,7 +69,7 @@ global $products;
                     <td scrope="col"><?=$product->name?></td>
                     <td scrope="col"><?=getCategoryName($product->category_id)?></td>
                     <td scrope="col"></td>
-                    <td scrope="col"><a class="btn btn-danger btn-sm px-3" href="/admin/deleteProduct<?=$product->id?>">delete</a></td>
+                    <td scrope="col"><a class="btn btn-danger btn-sm px-3" href="/admin/deleteProduct/<?=$product->id?>">delete</a></td>
                 </tr>
                     <?php
                 $number++;
