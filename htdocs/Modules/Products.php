@@ -29,9 +29,22 @@ function deleteProduct(int $productID){
     global $pdo;
     $id = filter_var($productID, FILTER_VALIDATE_INT);
     if($id!==false){
-        $stmnt = $pdo->prepare('DELETE FROM product WHERE  `id`=:id');
-        $stmnt->bindParam(':id',$id);
-        $stmnt->execute();
+        $sth = $pdo->prepare('DELETE FROM product WHERE  `id`=:id');
+        $sth->bindParam(':id',$id);
+        $sth->execute();
 
     }
+}
+
+function editProduct(int $productID){
+    global $pdo;
+    $id = filter_var($productID, FILTER_VALIDATE_INT);
+    if($id!==false){
+        $sth = $pdo->prepare('DELETE FROM product WHERE  `id`=:id');
+        $sth->bindParam(':id',$id);
+        $sth->bindParam(':id',$id);
+        $sth->bindParam(':id',$id);
+        $sth->execute();
+    }
+
 }

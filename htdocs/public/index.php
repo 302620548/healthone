@@ -8,7 +8,6 @@ require '../Modules/Contacts.php';
 //require '../Modules/Logout.php';
 //require '../Modules/Common.php';
 session_start();
-var_dump($_SESSION);
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
