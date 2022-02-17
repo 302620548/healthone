@@ -21,7 +21,7 @@ include_once ('defaults/New header.php');
         </ol>
     </nav>
 
-</div>
+
     <div class="row gy-3 ">
 
         <?php global $products, $name ?>
@@ -30,7 +30,7 @@ include_once ('defaults/New header.php');
                 <div class="card">
                     <div class="card-body text-center">
                         <a href="/product/<?= $product->id ?>">
-                            <img class="product-img img-responsive center-block" src='/img/<?= $product->picture ?>'/>
+                            <img class="product-img img-fluid center-block" src='/img/<?= $product->picture ?>'/>
 
                         </a>
                         <div class="card-title mb-3"><?= $product->name ?>
@@ -40,13 +40,13 @@ include_once ('defaults/New header.php');
 
             </div>
         <?php endforeach;?>
-
+    </div>
     <hr>
     <?php
     include_once('defaults/footer.php');
 
     ?>
-
+</div>
 </body>
 </html>
 </html>

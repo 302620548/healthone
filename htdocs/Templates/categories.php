@@ -18,7 +18,6 @@ include_once ('defaults/New header.php');
         </ol>
     </nav>
 
-</div>
 <div class="row gy-3 ">
 
     <?php global $categories ?>
@@ -37,6 +36,8 @@ include_once ('defaults/New header.php');
 
         </div>
     <?php endforeach;?>
+
+</div>
     <hr>
     <?php
     include_once('defaults/footer.php');

@@ -101,6 +101,15 @@ switch ($params[1]) {
             include_once "../Templates/login.php";
         }
         break;
+
+    case 'register':
+        include_once "../Templates/register.php";
+        break;
+
+    case 'termsAndPrivacy':
+        include_once "../Templates/termsAndPrivacy.php";
+        break;
+
     case 'logout':
         $_SESSION=[];
         include_once ('../Templates/home.php');

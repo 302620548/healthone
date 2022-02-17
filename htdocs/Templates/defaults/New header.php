@@ -13,7 +13,7 @@
                 <ul class="NavLinks">
                     <li><a href="/home">Home</a></li>
                     <li><a href="/categories">Sportapparaat</a></li>
-                    <li><a href="#">Registreren</a></li>
+                    <li><a href="/register">Registreren</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
