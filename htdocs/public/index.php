@@ -5,6 +5,8 @@ require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
 require '../Modules/Contacts.php';
+require '../Modules/Register.php';
+require '../Modules/Member.php';
 //require '../Modules/Logout.php';
 //require '../Modules/Common.php';
 session_start();
@@ -18,7 +20,6 @@ switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
         $categories = getCategories();
-        
         include_once "../Templates/categories.php";
         break;
 
@@ -60,8 +61,7 @@ switch ($params[1]) {
             $productId=$_GET['id'];
             $product = getProduct($productId);
             if(isset($_POST['verzenden'])) {
-                //var_dump($_POST);
-                $name = $_POST['name'];
+                $name = $_SESSION['user']->first_name . " " . $_SESSION['user']->last_name;
                 $description = $_POST['description'];
                 $stars = $_POST['stars'];
                 saveReview($name,$description,$stars,$productId);
@@ -86,13 +86,14 @@ switch ($params[1]) {
                     //include_once "../Templates/login.php";
                     break;
                 case 'MEMBER' :
+                    header("location: /member/home");
                     break;
                 case 'FAILURE':
-                    $message = "Email of password niet correct ingevuld!";
+                    $message = "Email of wachtwoord niet correct ingevuld!";
                     include_once "../Templates/login.php";
                     break;
                 case 'INCOMPLETE':
-                    $message = "formulier niet volledig ingevuld!";
+                    $message = "Formulier niet volledig ingevuld!";
                     include_once "../Templates/login.php";
                     break;
             }
@@ -103,11 +104,27 @@ switch ($params[1]) {
         break;
 
     case 'register':
-        include_once "../Templates/register.php";
-        break;
+        $titleSuffix = ' | Register';
 
-    case 'termsAndPrivacy':
-        include_once "../Templates/termsAndPrivacy.php";
+        if(isset($_POST['submit'])){
+            $result = makeRegistration();
+            switch ($result) {
+                case 'SUCCESS':
+                    header("Location: /home");
+                    break;
+
+                case 'INCOMPLETE':
+                    $message="Niet alle velden zijn correct ingevuld";
+                    include_once "../Templates/register.php";
+                    break;
+
+                case 'EXIST':
+                    $message = "Gebruiker bestaat al";
+                    include_once "../Templates/register.php";
+            }
+        } else {
+            include_once "../Templates/register.php";
+        }
         break;
 
     case 'logout':
@@ -116,6 +133,9 @@ switch ($params[1]) {
         break;
     case 'admin':
         include_once ('admin.php');
+        break;
+    case 'member':
+        include_once ('member.php');
         break;
     default:
         $titleSuffix = ' | Home';

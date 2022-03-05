@@ -7,24 +7,36 @@ include_once('defaults/head.php');
 <body>
 
 <?php
-include_once ('defaults/New header.php');
+if (isMember()){
+    include_once ('member/defaults/New header.php');
+}else {
+    include_once ('defaults/New header.php');
+}
 ?>
 
 <div class="container">
     <?php
-    global $product;
+    global $product, $categoryId, $name, $reviews;
     ?>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">sportcenter</a></li>
+            <?php
+            if (isMember()){ ?>
+                <li class="breadcrumb-item"><a href="member/home">Home</a></li>
+                <?php
+            }else { ?>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <?php
+            }
+            ?>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-
+            <li class="breadcrumb-item"><a href="/category/<?= $product->category_id ?>">Products</a></li>
+            <li class="breadcrumb-item"><a href="/product/<?= $product->id ?>"><?= $product->name?></a></li>
+            <li class="breadcrumb-item"><a href="/review/<?= $product->id ?>">Review</a></li>
         </ol>
     </nav>
 
-</div>
-<div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="card">
@@ -32,8 +44,6 @@ include_once ('defaults/New header.php');
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->name ?></h5>
                     <p class="card-text"><?= $product->description ?></p>
-                    <a href="/review/<?=$product->id?>">review</a>
-                    <a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-primary">Add Review</a>
                 </div>
             </div>
         </div>
@@ -42,12 +52,6 @@ include_once ('defaults/New header.php');
     <div class="row gy-3">
         <p class="lead">Geef uw mening over dit sportapparaat</p>
         <form method="post">
-            <div class="mb-3">
-                <label for="name" class="col-form-label">
-                    Naam:
-                </label>
-                <input type="text" name="name" class="form-control" id="name">
-            </div>
             <div class="mb-3">
                 <label for="name" class="col-form-label">
                     Review:
@@ -69,19 +73,18 @@ include_once ('defaults/New header.php');
             </div>
         </form>
     </div>
-    
-</div>
-
-</div>
-
-
-
 
 <hr>
 <?php
 include_once('defaults/footer.php');
 
 ?>
+
+</div>
+
+
+
+
 
 </body>
 </html>

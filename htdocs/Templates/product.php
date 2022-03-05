@@ -7,21 +7,32 @@ include_once('defaults/head.php');
 <body>
 
 <?php
-include_once ('defaults/New header.php');
+if (isMember()){
+    include_once ('member/defaults/New header.php');
+}else {
+    include_once ('defaults/New header.php');
+}
 ?>
-
 <div class="container">
+
     <?php
-    global $product, $name, $reviews;
+    global $product, $categoryId, $name, $reviews;
     ?>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">sportcenter</a></li>
+            <?php
+            if (isMember()){ ?>
+                <li class="breadcrumb-item"><a href="member/home">Home</a></li>
+                <?php
+            }else { ?>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <?php
+            }
+            ?>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
-            <li class="breadcrumb-item"><a href="/categories/<?= $product->category_id ?>"><?= $name ?></a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?= $product->name?></li>
-
+            <li class="breadcrumb-item"><a href="/category/<?= $product->category_id ?>">Products</a></li>
+            <li class="breadcrumb-item"><a href="/product/<?= $product->id ?>"><?= $product->name?></a></li>
         </ol>
     </nav>
 
@@ -35,7 +46,12 @@ include_once ('defaults/New header.php');
                 <div class="card-body">
                     <h5 class="card-title"><?= $product->name ?></h5>
                     <p class="card-text"><?= $product->description ?></p>
-                    <a href="/review/<?=$product->id?>">review</a>
+                    <?php
+                    if (isMember()) {
+                        ?><a type="button" href="/review/<?=$product->id?>" role="button" class="btn btn-primary">Add Review</a><?php
+                    }?>
+
+
                 </div>
             </div>
         </div>
@@ -51,15 +67,16 @@ include_once ('defaults/New header.php');
     echo "</table>";
 
     ?>
+    <hr>
+    <?php
+    include_once('defaults/footer.php');
+
+    ?>
 
     </div>
 
 
-<hr>
-<?php
-include_once('defaults/footer.php');
 
-?>
 
 </body>
 </html>

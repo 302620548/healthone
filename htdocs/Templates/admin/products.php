@@ -45,7 +45,7 @@ global $products;
                     <th scope="col">Afbeelding</th>
                     <th scope="col">Naam</th>
                     <th scope="col">Category</th>
-                    <th scope="col">Aanpassen</th>
+                    <!--<th scope="col">Aanpassen</th>-->
                     <th scope="col">Verwijderen</th>
                 </tr>
                 </thead>
@@ -62,7 +62,7 @@ global $products;
                     <td scrope="col"><img class="img-fluid center-block" width="100px" src='/img/<?= $product->picture ?>'/></td>
                     <td scrope="col"><?=$product->name?></td>
                     <td scrope="col"><?=getCategoryName($product->category_id)?></td>
-                    <td scrope="col"><a class="btn btn-success btn-sm px-3" href="/admin/editProduct/<?=$product->id?>">Edit</a></td>
+                    <!--<td scrope="col"><a class="btn btn-success btn-sm px-3" href="/admin/editProduct/<?/*//=$product->id*/?>">Edit</a></td>-->
                     <td scrope="col"><a class="btn btn-danger btn-sm px-3" href="/admin/deleteProduct/<?=$product->id?>">Delete</a></td>
                 </tr>
                     <?php

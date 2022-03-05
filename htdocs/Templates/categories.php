@@ -6,14 +6,26 @@ include_once('defaults/head.php');
 
 <body>
 <?php
-include_once ('defaults/New header.php');
+if (isMember()){
+    include_once ('member/defaults/New header.php');
+}else {
+    include_once ('defaults/New header.php');
+}
 ?>
 <div class="container">
 
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home">sportcenter</a></li>
+            <?php
+            if (isMember()){ ?>
+                <li class="breadcrumb-item"><a href="member/home">Home</a></li>
+                <?php
+            }else { ?>
+                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                <?php
+            }
+            ?>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
         </ol>
     </nav>

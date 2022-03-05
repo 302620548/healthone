@@ -17,13 +17,12 @@ if (!isAdmin()) {
             break;
 
         case 'addProduct':
-            echo $_GET ["test"];
             include_once "../Templates/admin/addProduct.php";
             break;
 
-        case 'editProduct':
+        /*case 'editProduct':
             include_once "../Templates/admin/editProduct.php";
-            break;
+            break;*/
 
         case 'deleteProduct':
             //$product = getProduct($_GET['id']);
