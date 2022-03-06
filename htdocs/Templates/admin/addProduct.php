@@ -23,12 +23,12 @@ include_once ('defaults/New header.php');
                 <input type="text" name="description" class="form-control" id="description">
             </div>
 
-            <div class="mb-3">
+            <!--<div class="mb-3">
                 <label for="picture" class="col-form-label">
-                    Beschrijving:
+                    Foto:
                 </label>
                 <input type="file" name="picture" class="form-control" id="description">
-            </div>
+            </div>-->
 
 
             <?php
@@ -85,7 +85,7 @@ include_once ('defaults/New header.php');
                     $query->bindParam("description", $description);
                     $query->bindParam("category_id", $category_id);
                     if ($query->execute()) {
-                        echo '<div class="alert alert-secondary" role="alert">Product toegevoegd</div>';
+                        echo '<br> <br><div class="alert alert-secondary" role="alert">Product toegevoegd</div>';
                     }
                     else {
                         echo "Error";
