@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 02 dec 2021 om 14:24
--- Serverversie: 10.4.21-MariaDB
--- PHP-versie: 8.0.10
+-- Generation Time: Mar 06, 2022 at 07:07 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -34,7 +34,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `picture`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `category` (`id`, `name`, `picture`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `opening_hours`
+-- Table structure for table `opening_hours`
 --
 
 CREATE TABLE `opening_hours` (
@@ -56,7 +56,7 @@ CREATE TABLE `opening_hours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `opening_hours`
+-- Dumping data for table `opening_hours`
 --
 
 INSERT INTO `opening_hours` (`id`, `day`, `time`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `opening_hours` (`id`, `day`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -83,7 +83,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VALUES
@@ -105,7 +105,7 @@ INSERT INTO `product` (`id`, `name`, `picture`, `description`, `category_id`) VA
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
@@ -118,10 +118,19 @@ CREATE TABLE `review` (
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `user_id`, `name`, `date`, `description`, `stars`, `product_id`) VALUES
+(32, 1, 'Giga Chad', '2022-03-06', 'Super leuk sportapparaat. Ik zou er graag nog een keer mee willen sporten!', 5, 1),
+(33, 1, 'Giga Chad', '2022-03-06', 'Super goed ding!', 5, 1),
+(34, 1, 'Test Test', '2022-03-06', 'Super!', 5, 1);
+
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -134,18 +143,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `email`, `password`, `first_name`, `last_name`, `role`) VALUES
-(1, 'test@hotmail.com', 'test', 'test', 'test', 'admin');
+(1, 'admin@gmail.com', '1234', 'Jeffrey', 'Klein', 'admin'),
+(2, 'member@gmail.com', '1234', 'Giga', 'Chad', 'member');
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`),
@@ -153,20 +163,20 @@ ALTER TABLE `category`
   ADD KEY `id` (`id`);
 
 --
--- Indexen voor tabel `opening_hours`
+-- Indexes for table `opening_hours`
 --
 ALTER TABLE `opening_hours`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Indexen voor tabel `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`id`),
@@ -175,61 +185,62 @@ ALTER TABLE `review`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexen voor tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT voor een tabel `opening_hours`
+-- AUTO_INCREMENT for table `opening_hours`
 --
 ALTER TABLE `opening_hours`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT voor een tabel `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT voor een tabel `review`
+-- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT voor een tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `product`
+-- Constraints for table `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 
 --
--- Beperkingen voor tabel `review`
+-- Constraints for table `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
